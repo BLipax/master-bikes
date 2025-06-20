@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Catálogo de Bicicletas</title>
+</head>
+<body>
+    <h1>Catálogo</h1>
+    {% for bici in bicicletas %}
+        <div>
+            <h2>{{ bici.nombre }}</h2>
+            <p>{{ bici.descripcion }}</p>
+            <p>Tipo: {{ bici.get_tipo_display }}</p>
+            {% if bici.disponible_para_venta %}
+                <p>Precio de venta: ${{ bici.precio_venta }}</p>
+            {% endif %}
+            {% if bici.disponible_para_arriendo %}
+                <p>Precio arriendo por hora: ${{ bici.precio_arriendo_hora }}</p>
+            {% endif %}
+            {% if bici.imagen %}
+                <img src="{{ bici.imagen.url }}" width="200">
+            {% endif %}
+        </div>
+    {% endfor %}
+</body>
+</html>

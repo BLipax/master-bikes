@@ -1,0 +1,13 @@
+<html>
+<head>
+    <title>Agendar arriendo</title>
+</head>
+<body>
+    <h1>Agendar arriendo</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Agendar</button>
+    </form>
+</body>
+</html>
